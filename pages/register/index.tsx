@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React, { ReactElement } from 'react'
 import  Navbar from '../../shared/components/navbar';
+import  Footer from '../../shared/components/footer';
 interface Props {
     
 }
@@ -50,27 +51,7 @@ export default function register({}: Props): ReactElement {
               </div>
             </div>
             </div>
-      <footer className="footer footer-default text-primary">
-        <div className="container">
-          <nav className="float-left">
-            <ul>
-              <li>
-                <Link href='/'>
-                  <a>
-                    Awesome project
-                  </a>
-                </Link>
-
-              </li>
-            </ul>
-          </nav>
-          <div className="copyright float-right">
-            &copy;
-       Made with <i className="fa fa-heart"></i> by
-        <a target="blank">Awesome project </a> for a better web.
-      </div>
-        </div>
-      </footer>
+            <Footer/>
       
     
             
