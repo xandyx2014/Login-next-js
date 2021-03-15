@@ -22,7 +22,7 @@ export default function register({}: Props): ReactElement {
                 <div className="col-lg-4 col-md-6 ml-auto mr-auto">
                 <div className="card card-login">
               <form className="form">
-                <div className="card-header card-header-primary text-center">
+                <div className="card-header card-header-rose text-center">
                   <h4 className="card-title">Register</h4>
                   <div className="social-line">
                     <a  className="btn btn-just-icon btn-link">
