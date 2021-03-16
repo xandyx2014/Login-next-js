@@ -1,4 +1,4 @@
-import UserRepository from "../domain/userRepository";
+import UserRepository from "../../domain/userRepository";
 import { LoginUserRequest } from "./userLoginRequest";
 
 export class UserLogin {

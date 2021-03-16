@@ -1,4 +1,4 @@
-import {UserRegisterRequest} from "../application/userRegisterRequest";
+import {UserRegisterRequest} from "../application/register/userRegisterRequest";
 import { User } from "../domain/User";
 import UserRepository from "../domain/userRepository";
 

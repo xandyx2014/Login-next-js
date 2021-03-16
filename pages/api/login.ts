@@ -1,5 +1,5 @@
-import { UserLogin } from "../../core/user/application/userLogin";
-import {LoginUserRequest} from "../../core/user/application/userLoginRequest";
+import { UserLogin } from "../../core/user/application/login/userLogin";
+import {LoginUserRequest} from "../../core/user/application/login/userLoginRequest";
 import PostgreUserRepository from "../../core/user/infraestructure.persistence/postgresUserRepository";
 import { HttpStatusCode } from "../../shared/enum/httpStatusCodes";
 import handle from '../../shared/service/handleError';

@@ -1,6 +1,6 @@
 import { Uuid } from "../../core/shared/value-object/Uuid";
-import { UserRegister } from "../../core/user/application/userRegister";
-import { UserRegisterRequest } from "../../core/user/application/userRegisterRequest";
+import { UserRegister } from "../../core/user/application/register/userRegister";
+import { UserRegisterRequest } from "../../core/user/application/register/userRegisterRequest";
 import PostgreUserRepository from "../../core/user/infraestructure.persistence/postgresUserRepository";
 import { HttpStatusCode } from "../../shared/enum/httpStatusCodes";
 import handle from '../../shared/service/handleError';
@@ -10,7 +10,7 @@ const handler = handle
   .get(async (req, res) => {
     const userRequest: UserRegisterRequest = {
       id: Uuid.random().value,
-      name: 'Andy jesus macias gomez',
+      name: 'andy jesus macias gomez Andy JéSUS MACIAS GOMEZñ',
       email: 'xandyx2014@gmail.com',
       password: ''
     };

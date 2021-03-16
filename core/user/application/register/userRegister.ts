@@ -1,10 +1,10 @@
-import UserRepository from "../domain/userRepository";
+import UserRepository from "../../domain/userRepository";
 import { UserRegisterRequest } from "./userRegisterRequest";
-import { User } from '../domain/User';
-import { UserId } from "../domain/UserId";
-import { UserName } from "../domain/UserName";
-import { UserEmail } from "../domain/UserEmail";
-import UserPassword from "../domain/UserPassword";
+import { User } from '../../domain/User';
+import { UserId } from "../../domain/UserId";
+import { UserName } from "../../domain/UserName";
+import { UserEmail } from "../../domain/UserEmail";
+import UserPassword from "../../domain/UserPassword";
 
 export class UserRegister {
     constructor(private repository: UserRepository){}

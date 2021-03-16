@@ -1,3 +1,5 @@
 import { StringValueObject } from "../../shared/value-object/StringValueObject";
 
-export default class UserPassword extends StringValueObject {}
+export default class UserPassword extends StringValueObject {
+    constructor(value) { super(value)}
+}
