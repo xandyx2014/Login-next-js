@@ -1,6 +1,12 @@
 import Jwt from 'jsonwebtoken';
+import { InvalidArgumentError } from './InvalidArgumentError';
  export class JsonWebToken {
-    sign(value) {
-        return Jwt.sign(value, process.env.customKey)
+    static sign(value) {
+        try {
+            return Jwt.sign(value, process.env.customKey)
+        } catch (error) {
+            throw new InvalidArgumentError('Password Incorrect');
+        }
+        
     }
 } 

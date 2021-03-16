@@ -8,10 +8,10 @@ const userLogin = new UserLogin(new PostgreUserRepository());
 const handler = handle
   .post(async (req, res) => {
     const userRequest: LoginUserRequest = {
-      id: '',
-      email: '',
-      password: ''
+      email: 'test10@test.com',
+      password: 'UPDATE33todeath@'
     };
-    return res.status(HttpStatusCode.Ok).json(userLogin.post(userRequest));
+    const user = await userLogin.post(userRequest);
+    return res.status(HttpStatusCode.Ok).json(user);
   });
 export default handler;

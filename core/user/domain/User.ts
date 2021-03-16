@@ -1,16 +1,14 @@
-import { JsonWebToken } from "../../shared/value-object/jwt";
 import { UserEmail } from "./UserEmail";
 import { UserId } from "./UserId";
 import { UserName } from "./UserName";
 import UserPassword from "./UserPassword";
 
-export class User extends JsonWebToken {
+export class User {
     readonly id: UserId;
     readonly email: UserEmail;
     readonly name: UserName;
     readonly password: UserPassword;
     private constructor(id: UserId, name: UserName, email: UserEmail, password: UserPassword) {
-        super();
         this.id = id;
         this.name = name;
         this.email = email;
@@ -21,11 +19,20 @@ export class User extends JsonWebToken {
         return user;
     }
     toPrimitives() {
+      
         return {
           id: this.id.value,
           name: this.name.value,
           email: this.email.value
         };
+    }
+    static createToLogin(id: UserId ,email: UserEmail, name: UserName) {
+      const user = new User(id, name, email, null);
+      return {
+        id: user.id,
+        email: user.email.value,
+        name: user.name
+      };
     }
     toPassword() {
       return this.password.value;

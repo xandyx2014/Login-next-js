@@ -26,11 +26,6 @@ export default class PostgreUserRepository implements UserRepository {
             where: {
                 email: emailValue
             },
-            select: {
-                id: true,
-                name: true,
-                email: true,    
-            }
         });
         return userDB;
     }
