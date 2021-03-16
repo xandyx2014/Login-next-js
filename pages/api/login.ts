@@ -9,7 +9,6 @@ import handle from '../../shared/service/handleError';
 const userLogin = new UserLogin(new PostgreUserRepository());
 const handler = handle
   .post(async (req, res) => {
-    console.log(req['auth']);
     const userRequest: LoginUserRequest = {
       email: req.body.email,
       password: req.body.password

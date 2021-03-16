@@ -5,12 +5,15 @@ interface Props {
     title: string;
     textButton: string;
     urlButton: string;
+    trasparent?: boolean
 }
 
-export default function _navbar({title, textButton, urlButton }: Props): ReactElement {
-    return (
+export default function _navbar({title, textButton, urlButton, trasparent = true }: Props): ReactElement {
+  const classNavbar = "navbar navbar-default navbar-expand-lg "; 
+  const navbar = trasparent ? classNavbar  + "navbar-transparent":  classNavbar + "bg-dark";
+  return (
         <div>
-            <nav className="navbar navbar-default navbar-expand-lg navbar-transparent" role="navigation-demo">
+            <nav className={navbar} role="navigation-demo">
             <div className="container">
               
               <div className="navbar-translate">

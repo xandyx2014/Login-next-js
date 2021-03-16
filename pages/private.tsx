@@ -1,13 +1,18 @@
 import React, { ReactElement } from 'react'
-
+import Navbar from '../shared/components/navbar';
+import { isAuthorizeHoc } from '../shared/service/authorization';
 interface Props {
     
 }
 
-export default function privateMain({}: Props): ReactElement {
+const componentPrivate = ({}: Props): ReactElement => {
     return (
         <div>
-            Private main
+        <>
+        <Navbar title="Private page" textButton="Logout" urlButton="/" trasparent={false}  />
+        </>
         </div>
     )
 }
+const privateMain = isAuthorizeHoc(componentPrivate);
+export default privateMain;
