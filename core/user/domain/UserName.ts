@@ -1,7 +1,7 @@
 import { ExgPattern } from "../../../shared/helpers/ExgPattern";
 import { InvalidArgumentError } from "../../shared/value-object/InvalidArgumentError";
 import { StringValueObject } from "../../shared/value-object/StringValueObject";
-import { UserIsRequiredError } from "./UserIsRequired";
+import { UserNameIsRequiredError } from "./UserIsRequired";
 import { UserNameMinLeghtError } from "./UserNameMinLeght";
 
 export class UserName extends StringValueObject {
@@ -13,7 +13,7 @@ export class UserName extends StringValueObject {
     }
     private ensureIsRequired(value) {
         if (typeof value === 'undefined' || value === null) {
-            throw new UserIsRequiredError(value);
+            throw new UserNameIsRequiredError(value);
         }
     }
     private ensureLengthIsValidName(value: string) {

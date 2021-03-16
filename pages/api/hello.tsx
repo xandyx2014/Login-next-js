@@ -1,6 +1,5 @@
 import { HttpStatusCode } from "../../shared/enum/httpStatusCodes";
 import handle from '../../shared/service/handleError';
-import { PrismaClient } from '@prisma/client'
 import prisma from '../../lib/prisma';
 
 
