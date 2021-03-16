@@ -8,11 +8,9 @@ export class UserEmail extends StringValueObject {
         this.ensureLengthIsValidEmail(value);
     }
     private ensureLengthIsValidEmail(value: string): void {
-        // console.log(ExgPattern.isValidEmail.test(value), value);
         if (!ExgPattern.isValidEmail.test(value)) {
             console.log(!ExgPattern.isValidEmail.test(value));
             throw new InvalidEmailError(`the email ${value} not is email valid`);
         }
-        
     }
 }

@@ -12,6 +12,7 @@ export class User {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.password = password;
     }
     static create(id: UserId, name: UserName, email: UserEmail, password: UserPassword): User {
         const user = new User(id, name, email, password);
@@ -23,5 +24,8 @@ export class User {
           name: this.name.value,
           email: this.email.value
         };
-      }
+    }
+    toPassword() {
+      return this.password.value;
+    }
 }

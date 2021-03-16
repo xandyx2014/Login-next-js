@@ -10,9 +10,9 @@ const handler = handle
   .get(async (req, res) => {
     const userRequest: UserRegisterRequest = {
       id: Uuid.random().value,
-      name: 'andy jesus macias gomez Andy JéSUS MACIAS GOMEZñ',
-      email: 'xandyx2014@gmail.com',
-      password: ''
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password
     };
     return res.status(HttpStatusCode.Ok).json(userRegister.post(userRequest));
   })
