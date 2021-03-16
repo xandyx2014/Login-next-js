@@ -1,18 +1,36 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { ExgPattern } from '../../shared/helpers/ExgPattern';
-
+import { useRouter } from 'next/router'
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import SecureLs from 'secure-ls';
+import { encodeBase64 } from 'bcryptjs';
 interface Props {
     
 }
 
 export default function _formLogin({}: Props): ReactElement {
     const { register, handleSubmit, watch, errors  } = useForm();
+    const [ disableButton, setDisableButton] = useState(false);
+    const router = useRouter();
   const onSubmit = data => {
-    console.log('DATA on submit', data);
+    console.log(data);
+    setDisableButton(true);
+    axios.post('/api/login', {...data}).then( async resp => {
+      setDisableButton(false);
+      const { data } = resp;
+      localStorage.setItem('tk', JSON.stringify(data));
+      await Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+      );
+      console.log(data);
+      router.push('/public');
+    });
     
   };
-  console.log('Erros', errors);
     return (
         <>
             <div className="container mt-4" >
@@ -34,7 +52,7 @@ export default function _formLogin({}: Props): ReactElement {
                       </a>
                     </div>
                   </div>
-                  <p className="description text-center">Login to My awesome project</p>
+                  <p className="description text-center">Login to My awesome project { `${disableButton}` }</p>
                   <div className="card-body p-3">
 
                     
@@ -50,7 +68,7 @@ export default function _formLogin({}: Props): ReactElement {
                       </div>
                       
                       <div className="footer text-center">
-                        <button className="btn btn-primary btn-link btn-wd btn-lg">Login</button>
+                        <button disabled={disableButton} className="btn btn-primary btn-link btn-wd btn-lg">Login</button>
                       </div>
                     
 

@@ -29,9 +29,9 @@ export class User {
     static createToLogin(id: UserId ,email: UserEmail, name: UserName) {
       const user = new User(id, name, email, null);
       return {
-        id: user.id,
+        id: user.id.value,
         email: user.email.value,
-        name: user.name
+        name: user.name.value
       };
     }
     toPassword() {

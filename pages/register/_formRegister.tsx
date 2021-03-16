@@ -1,23 +1,29 @@
-import React, { ReactElement, useEffect } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { ExgPattern } from '../../shared/helpers/ExgPattern';
 import axios from 'axios';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import { useRouter } from 'next/router'
 interface Props {
     
 }
 
 export default function _formRegister({}: Props): ReactElement {
+  const [ disableButton, setDisablebutton ] = useState(false);
   const { register, handleSubmit, watch, errors, reset  } = useForm();
+  const router = useRouter();
   const onSubmit = (data, e) => {
+    setDisablebutton(true);
     axios.post('/api/register', {...data})
     .then( async e => {
+      setDisablebutton(false);
       await Swal.fire({
         title: 'Success!',
         text: 'User successfully registered',
         icon: 'success',
         confirmButtonText: 'Ok',
       });
+      router.push('/login');
       reset();
     })
     .catch( e => {
@@ -76,7 +82,7 @@ export default function _formRegister({}: Props): ReactElement {
                       </div>
                       
                       <div className="footer text-center">
-                        <button className="btn btn-primary btn-link btn-wd btn-lg">Login</button>
+                        <button disabled={disableButton} className="btn btn-primary btn-link btn-wd btn-lg">Login</button>
                       </div>
                     
 
