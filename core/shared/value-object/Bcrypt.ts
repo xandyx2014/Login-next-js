@@ -20,5 +20,5 @@ export class Bcrypt {
     }
     toString(): string {      
         return this.value;
-      }
+    }
 }

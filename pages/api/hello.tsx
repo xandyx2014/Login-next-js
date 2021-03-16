@@ -6,7 +6,7 @@ import prisma from '../../lib/prisma';
 let handler = handle
   .get(async (req, res) => {
     
-    const allUsers = await prisma.user.findMany()
+    const allUsers = await prisma.user.findMany();
     return res.status(HttpStatusCode.Ok).json(allUsers);
   })
 handler = handle.post(async (req, res) => {

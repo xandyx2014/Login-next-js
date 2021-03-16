@@ -1,14 +1,16 @@
+import { JsonWebToken } from "../../shared/value-object/jwt";
 import { UserEmail } from "./UserEmail";
 import { UserId } from "./UserId";
 import { UserName } from "./UserName";
 import UserPassword from "./UserPassword";
 
-export class User {
+export class User extends JsonWebToken {
     readonly id: UserId;
     readonly email: UserEmail;
     readonly name: UserName;
     readonly password: UserPassword;
     private constructor(id: UserId, name: UserName, email: UserEmail, password: UserPassword) {
+        super();
         this.id = id;
         this.name = name;
         this.email = email;

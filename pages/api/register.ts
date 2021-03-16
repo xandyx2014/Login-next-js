@@ -7,9 +7,6 @@ import handle from '../../shared/service/handleError';
 
 const userRegister = new UserRegister(new PostgreUserRepository());
 const handler = handle
-  .get(async (req, res) => {
-    
-  })
   .post(async (req, res) => {
     const userRequest: UserRegisterRequest = {
       id: Uuid.random().value,
@@ -20,10 +17,4 @@ const handler = handle
     const user = await userRegister.post(userRequest);
     return res.status(HttpStatusCode.Ok).json(user);
   })
-  .put(async (req, res) => {
-    res.end("async/await is also supported!");
-  })
-  .patch(async (req, res) => {
-    throw new Error("Throws me around! Error can be caught and handled.");
-  });
 export default handler;

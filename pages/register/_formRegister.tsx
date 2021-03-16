@@ -1,15 +1,34 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import { ExgPattern } from '../../shared/helpers/ExgPattern';
-
+import axios from 'axios';
+import Swal from 'sweetalert2'
 interface Props {
     
 }
 
 export default function _formRegister({}: Props): ReactElement {
-    const { register, handleSubmit, watch, errors  } = useForm();
-  const onSubmit = data => {
-    console.log('DATA on submit', data);
+  const { register, handleSubmit, watch, errors, reset  } = useForm();
+  const onSubmit = (data, e) => {
+    axios.post('/api/register', {...data})
+    .then( async e => {
+      await Swal.fire({
+        title: 'Success!',
+        text: 'User successfully registered',
+        icon: 'success',
+        confirmButtonText: 'Ok',
+      });
+      reset();
+    })
+    .catch( e => {
+      const message = e.response?.data?.message;
+      Swal.fire({
+        title: 'Error!',
+        text: message,
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
+    })
   };
   console.log('Erros', errors);
     return (
