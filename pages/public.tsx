@@ -1,13 +1,19 @@
 import React, { ReactElement } from 'react'
 import Navbar from '../shared/components/navbar';
+import Head from 'next/head';
+import MetaDescription from '../shared/components/metaDescription';
 interface Props {
-    
+
 }
 
-export default function publicMain({}: Props): ReactElement {
+export default function publicMain({ }: Props): ReactElement {
     return (
         <>
-        <Navbar title="Public page" textButton="Menu" urlButton="/" trasparent={false}  />
+            <Head>
+                <title>Home</title>
+                <MetaDescription />
+            </Head>
+            <Navbar title="Public page" textButton="Menu" urlButton="/" trasparent={false} />
         </>
     )
 }

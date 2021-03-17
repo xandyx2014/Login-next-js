@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from 'next/head';
+import MetaDescription from '../../shared/components/metaDescription';
 import React, { ReactElement } from 'react'
 import  Navbar from '../../shared/components/navbar';
 import  Footer from '../../shared/components/footer';
@@ -13,6 +13,7 @@ export default function register({}: Props): ReactElement {
         <>
             <Head>
                 <title>Login</title>
+                <MetaDescription/>
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
             </Head>

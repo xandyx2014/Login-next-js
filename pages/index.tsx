@@ -1,14 +1,18 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import MetaDescription from '../shared/components/metaDescription';
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 export default function Home() {
   return (
-    <div style={styles}>
+    <>
+      
       <Head>
         <title>Home</title>
+        <MetaDescription/>
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
       </Head>
+      <div style={styles}>
       <nav className="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
         <div className="container">
           <div className="navbar-translate">
@@ -51,7 +55,7 @@ export default function Home() {
             <div className="col-md-8 ml-auto mr-auto">
               <div className="brand text-center">
                 <h1>My Title </h1>
-                <h3 className="title text-center">My Subtitle</h3>
+                <h2 className="title text-center">My Subtitle</h2>
               </div>
             </div>
           </div>
@@ -86,5 +90,7 @@ export default function Home() {
         </div>
       </footer>
     </div>
+      
+    </>
   )
 }

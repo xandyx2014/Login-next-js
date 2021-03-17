@@ -1,3 +1,5 @@
+import Head from 'next/head';
+import MetaDescription from '../shared/components/metaDescription';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { ReactElement, useEffect, useState } from 'react'
@@ -9,9 +11,9 @@ interface Props {
 
 const componentPrivate = ({ }: Props): ReactElement => {
     const router = useRouter();
-    const [ user, setUser ] = useState('');
+    const [user, setUser] = useState('');
     useEffect(() => {
-        const user = JSON.parse( localStorage.getItem('tk'));
+        const user = JSON.parse(localStorage.getItem('tk'));
         axios.get('/api/private', {
             headers: {
                 'Authorization': `${user.token}`
@@ -26,9 +28,13 @@ const componentPrivate = ({ }: Props): ReactElement => {
     return (
         <div>
             <>
+                <Head>
+                    <title>Home</title>
+                    <MetaDescription />
+                </Head>
                 <Navbar
                     title={`Private page Welcome ${user}`}
-                    onClickButton={ () => {
+                    onClickButton={() => {
                         localStorage.clear();
                     }}
                     textButton="Logout"
