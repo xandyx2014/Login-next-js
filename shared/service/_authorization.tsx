@@ -1,9 +1,5 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
-import Login from './login';
-
-
-
 export const isAuthorizeHoc = ( Component ) => {
     
     return () => {

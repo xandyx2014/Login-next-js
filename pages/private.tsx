@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { ReactElement, useEffect, useState } from 'react'
 import Navbar from '../shared/components/navbar';
-import { isAuthorizeHoc } from './_authorization';
+import { isAuthorizeHoc } from '../shared/service/_authorization';
 interface Props {
 
 }
