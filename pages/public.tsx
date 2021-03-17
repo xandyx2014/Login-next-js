@@ -10,7 +10,7 @@ export default function publicMain({ }: Props): ReactElement {
     return (
         <>
             <Head>
-                <title>Home</title>
+                <title>Public</title>
                 <MetaDescription />
             </Head>
             <Navbar title="Public page" textButton="Menu" urlButton="/" trasparent={false} />
