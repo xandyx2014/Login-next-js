@@ -27,7 +27,7 @@ export default function Home() {
           <div >
             <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-                <Link href='/login'>
+                <Link href='/public'>
                   <a className="nav-link">
                      Public
                   </a>
