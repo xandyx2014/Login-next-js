@@ -17,19 +17,26 @@ export default function Home() {
                 My awesome project </a>
             </Link>
 
-            <button className="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+            {/* <button className="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
               <span className="sr-only">Toggle navigation</span>
               <span className="navbar-toggler-icon"></span>
               <span className="navbar-toggler-icon"></span>
               <span className="navbar-toggler-icon"></span>
-            </button>
+            </button> */}
           </div>
-          <div className="collapse navbar-collapse">
+          <div >
             <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+                <Link href='/login'>
+                  <a className="nav-link">
+                     Public
+                  </a>
+                </Link>
+              </li>
               <li className="nav-item">
                 <Link href='/login'>
                   <a className="nav-link">
-                    <i className="fa fa-bars"></i> Login
+                    Login
                   </a>
                 </Link>
 

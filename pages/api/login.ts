@@ -1,7 +1,7 @@
 import { JsonWebToken } from "../../core/shared/value-object/jwt";
 import { UserLogin } from "../../core/user/application/login/userLogin";
 import {LoginUserRequest} from "../../core/user/application/login/userLoginRequest";
-import PostgreUserRepository from "../../core/user/infraestructure.persistence/PostgresUserRepository";
+import PostgreUserRepository from "../../core/user/infraestructure_persistence/PostgresUserRepository";
 import { HttpStatusCode } from "../../shared/enum/httpStatusCodes";
 import { AuthorizationMiddleware } from "../../shared/service/authorize";
 import handle from '../../shared/service/handleError';

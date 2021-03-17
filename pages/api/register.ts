@@ -1,7 +1,7 @@
 import { Uuid } from "../../core/shared/value-object/Uuid";
 import { UserRegister } from "../../core/user/application/register/userRegister";
 import { UserRegisterRequest } from "../../core/user/application/register/userRegisterRequest";
-import PostgreUserRepository from "../../core/user/infraestructure.persistence/PostgresUserRepository";
+import PostgreUserRepository from "../../core/user/infraestructure_persistence/PostgresUserRepository";
 import { HttpStatusCode } from "../../shared/enum/httpStatusCodes";
 import handle from '../../shared/service/handleError';
 

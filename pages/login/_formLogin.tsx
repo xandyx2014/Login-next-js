@@ -25,6 +25,7 @@ export default function _formLogin({ }: Props): ReactElement {
       );
       router.push('/private');
     }).catch( (e) => {
+      setDisableButton(false);
       Swal.fire(
         'Error!',
         e.message,
