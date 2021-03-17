@@ -34,6 +34,7 @@ const componentPrivate = ({ }: Props): ReactElement => {
                 </Head>
                 <Navbar
                     title={`Private page Welcome ${user}`}
+                    urlTitle='/private'
                     onClickButton={() => {
                         localStorage.clear();
                     }}

@@ -5,11 +5,12 @@ interface Props {
     title: string;
     textButton: string;
     urlButton: string;
+    urlTitle?: string;
     trasparent?: boolean;
     onClickButton?: Function
 }
 
-export default function _navbar({title, textButton, urlButton, trasparent = true, onClickButton = () => {} }: Props): ReactElement {
+export default function _navbar({title, urlTitle = '/' ,textButton, urlButton, trasparent = true, onClickButton = () => {} }: Props): ReactElement {
   const classNavbar = "navbar navbar-default navbar-expand-lg "; 
   const navbar = trasparent ? classNavbar  + "navbar-transparent":  classNavbar + "bg-dark";
   return (
@@ -18,7 +19,7 @@ export default function _navbar({title, textButton, urlButton, trasparent = true
             <div className="container">
               
               <div className="navbar-translate">
-                  <Link href="/">
+                  <Link href={urlTitle}>
                   <a className="navbar-brand">{ title }</a>
                   </Link>
               </div>
